@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet Interface</title>
+    <link rel="stylesheet" href="/assets/font/themify-icons-font/themify-icons/themify-icons.css">
+    <style>
+        * a{
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            margin-right: 20px;
+        }
+        .header {
+            background: #f5f5f5;
+            width: 100%;
+            height: 80px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 25px;
+            box-sizing: border-box;
+            z-index: 1000; 
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .header .icon {
+            display: flex;
+            cursor: pointer;
+        }
+        .header .icon a i {
+            margin-left: 10px;
+            border: 2px solid black;
+            border-radius: 25px;
+            padding: 5px;
+            font-size: 15px;
+        }
+        .wallet {
+            background-color: #BEB09E;
+            border-radius: 15px;
+            padding: 20px;
+            width: 300px;
+            height: 350px;
+            position: relative;
+            margin-top: 90px;
+        }
+        .wallet h2 {
+            margin: 0;
+            font-size: 22px;
+            color: aliceblue;
+        }
+        .icon-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .img {
+            width: 100%;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .img img {
+            width: 100%;
+        }
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: transparent;
+            border-radius: 25px;
+            border: aliceblue solid;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            color: aliceblue;
+        }
+        .close-button:hover{
+            color: #333;
+            border: #333 solid;
+        }
+        .coating {
+            width: 100%;
+            height: 70px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            background: #B0A08D;
+        }
+        .coating p {
+            color: #f5f5f5;
+            font-size: 14px;
+            position: absolute;
+            left: 15px;
+            top: 15px;
+        }
+        .receive-button {
+            display: block;
+            width: 50px;
+            background-color: white;
+            color: #007bff;
+            text-align: center;
+            border-radius: 20px;
+            padding: 4px 10px;
+            text-decoration: none;
+            font-size: 13px;
+            position: absolute;
+            top: 25px;
+            left: 250px;
+            font-weight: 600;
+        }
+        .receive-button:hover{
+            color: green;
+            cursor: pointer;
+        }
+        .see{
+            width: 90%;
+            height: 60px;
+            position: absolute;
+            top: 510px;
+            left: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 25px;
+            box-sizing: border-box; 
+            border: 1px solid #333;
+            border-radius: 15px;
+            transition: top 0.5s ease;
+        }
+        .see a{
+            text-decoration: none;
+            color: #f5f5f5;
+            position: absolute;
+            right: 0;
+            background: #007aff;
+            padding: 20px 25px;
+            border: 1px solid black;
+            border-radius: 15px;
+
+        }
+        .see a:hover{
+            background: #005bb5;
+            color: #f5f5f5;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .see p b{
+            color: green ;
+        }
+
+        /* Media query for iPhone 12 Pro */
+        @media (max-width: 390px) {
+            .wallet {
+                width: 280px;
+                height: 320px;
+            }
+            .see {
+                top: 450px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Ví</h1>
+        <div class="icon">
+            <a href="/menu.html"><i class="ti-plus"></i></a>
+            <a href="/xemthe.html"><i class="ti-package"></i></a>
+        </div>
+    </div>
+    <div class="wallet" id="wallet">
+        <button class="close-button" onclick="closeWallet()">x</button>
+        <h2>Thẻ lên tàu và vé<br>Tất cả tại một nơi</h2>
+        <div class="icon-container">
+            <div class="img"><img src="/assets/img/anh1.png" alt="icon"></div>
+        </div>
+        <div class="coating">
+            <p>Tìm ứng dụng và thu nhập thẻ</p>
+            <a href="#" class="receive-button">Nhận</a>
+        </div>
+    </div>
+    <div class="see">
+        <p>Có <b>7</b> thẻ trong ví</p>
+        <a href="/xemthe.html">Xem thẻ</a>
+    </div>
+    <script>
+        function closeWallet() {
+            document.getElementById('wallet').style.display = 'none';
+            document.querySelector('.see').style.top = '90px'; // Chuyển phần see lên vị trí ban đầu
+        }
+    </script>
+</body>
+</html>
